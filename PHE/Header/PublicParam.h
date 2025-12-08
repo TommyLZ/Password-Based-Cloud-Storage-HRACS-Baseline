@@ -33,9 +33,9 @@ void readFromBin(ifstream &inFile, string &str);
 string Integer_to_string(const Integer &integer);
 
 // Transfrom element_t to string
-string elementToString(element_t& element);
+string elementToString(element_t &element);
 
-// Save the data to the binary file 
+// Save the data to the binary file
 void save_to_file(element_t key, const char *filename);
 
 // Load the data to the binary file
@@ -45,16 +45,16 @@ void load_from_file(element_t key, const char *filename);
 void verify(element_t &beta, element_t &alpha, element_t &public_key);
 
 // Save the state of the servers
-void save_State(const Integer& nr, const string& filename);
+void save_State(const Integer &nr, const string &filename);
 
 // Load the state of the servers
-Integer load_State(const string& filename);
+Integer load_State(const string &filename);
 
 // AES_EAX authentication encryption operation
 void aes_EAX_FileEnc(const string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const string &outfilename);
 
 // AES_EAX authentication decryption operation
-void aes_EAX_FileDec(const string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const string &outfilename);
+void aes_EAX_FileDec(const std::string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const std::string &outfilename);
 
 // Get the client running time
-double getClientTime ();
+double getClientTime();

@@ -181,6 +181,62 @@ CMakeFiles/build.dir/Source/Take.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/build.dir/Source/Take.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommylz/文档/C++/PBCS/Source/Take.cpp -o CMakeFiles/build.dir/Source/Take.cpp.s
 
+CMakeFiles/build.dir/Source/Upload.cpp.o: CMakeFiles/build.dir/flags.make
+CMakeFiles/build.dir/Source/Upload.cpp.o: ../Source/Upload.cpp
+CMakeFiles/build.dir/Source/Upload.cpp.o: CMakeFiles/build.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/build.dir/Source/Upload.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/build.dir/Source/Upload.cpp.o -MF CMakeFiles/build.dir/Source/Upload.cpp.o.d -o CMakeFiles/build.dir/Source/Upload.cpp.o -c /home/tommylz/文档/C++/PBCS/Source/Upload.cpp
+
+CMakeFiles/build.dir/Source/Upload.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/build.dir/Source/Upload.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommylz/文档/C++/PBCS/Source/Upload.cpp > CMakeFiles/build.dir/Source/Upload.cpp.i
+
+CMakeFiles/build.dir/Source/Upload.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/build.dir/Source/Upload.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommylz/文档/C++/PBCS/Source/Upload.cpp -o CMakeFiles/build.dir/Source/Upload.cpp.s
+
+CMakeFiles/build.dir/Source/SingleQuery.cpp.o: CMakeFiles/build.dir/flags.make
+CMakeFiles/build.dir/Source/SingleQuery.cpp.o: ../Source/SingleQuery.cpp
+CMakeFiles/build.dir/Source/SingleQuery.cpp.o: CMakeFiles/build.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/build.dir/Source/SingleQuery.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/build.dir/Source/SingleQuery.cpp.o -MF CMakeFiles/build.dir/Source/SingleQuery.cpp.o.d -o CMakeFiles/build.dir/Source/SingleQuery.cpp.o -c /home/tommylz/文档/C++/PBCS/Source/SingleQuery.cpp
+
+CMakeFiles/build.dir/Source/SingleQuery.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/build.dir/Source/SingleQuery.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommylz/文档/C++/PBCS/Source/SingleQuery.cpp > CMakeFiles/build.dir/Source/SingleQuery.cpp.i
+
+CMakeFiles/build.dir/Source/SingleQuery.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/build.dir/Source/SingleQuery.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommylz/文档/C++/PBCS/Source/SingleQuery.cpp -o CMakeFiles/build.dir/Source/SingleQuery.cpp.s
+
+CMakeFiles/build.dir/Source/BatchQuery.cpp.o: CMakeFiles/build.dir/flags.make
+CMakeFiles/build.dir/Source/BatchQuery.cpp.o: ../Source/BatchQuery.cpp
+CMakeFiles/build.dir/Source/BatchQuery.cpp.o: CMakeFiles/build.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/build.dir/Source/BatchQuery.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/build.dir/Source/BatchQuery.cpp.o -MF CMakeFiles/build.dir/Source/BatchQuery.cpp.o.d -o CMakeFiles/build.dir/Source/BatchQuery.cpp.o -c /home/tommylz/文档/C++/PBCS/Source/BatchQuery.cpp
+
+CMakeFiles/build.dir/Source/BatchQuery.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/build.dir/Source/BatchQuery.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommylz/文档/C++/PBCS/Source/BatchQuery.cpp > CMakeFiles/build.dir/Source/BatchQuery.cpp.i
+
+CMakeFiles/build.dir/Source/BatchQuery.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/build.dir/Source/BatchQuery.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommylz/文档/C++/PBCS/Source/BatchQuery.cpp -o CMakeFiles/build.dir/Source/BatchQuery.cpp.s
+
+CMakeFiles/build.dir/Source/Update.cpp.o: CMakeFiles/build.dir/flags.make
+CMakeFiles/build.dir/Source/Update.cpp.o: ../Source/Update.cpp
+CMakeFiles/build.dir/Source/Update.cpp.o: CMakeFiles/build.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/build.dir/Source/Update.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/build.dir/Source/Update.cpp.o -MF CMakeFiles/build.dir/Source/Update.cpp.o.d -o CMakeFiles/build.dir/Source/Update.cpp.o -c /home/tommylz/文档/C++/PBCS/Source/Update.cpp
+
+CMakeFiles/build.dir/Source/Update.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/build.dir/Source/Update.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommylz/文档/C++/PBCS/Source/Update.cpp > CMakeFiles/build.dir/Source/Update.cpp.i
+
+CMakeFiles/build.dir/Source/Update.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/build.dir/Source/Update.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommylz/文档/C++/PBCS/Source/Update.cpp -o CMakeFiles/build.dir/Source/Update.cpp.s
+
 # Object files for target build
 build_OBJECTS = \
 "CMakeFiles/build.dir/main.cpp.o" \
@@ -190,7 +246,11 @@ build_OBJECTS = \
 "CMakeFiles/build.dir/Source/KeyServer.cpp.o" \
 "CMakeFiles/build.dir/Source/CloudServer.cpp.o" \
 "CMakeFiles/build.dir/Source/Give.cpp.o" \
-"CMakeFiles/build.dir/Source/Take.cpp.o"
+"CMakeFiles/build.dir/Source/Take.cpp.o" \
+"CMakeFiles/build.dir/Source/Upload.cpp.o" \
+"CMakeFiles/build.dir/Source/SingleQuery.cpp.o" \
+"CMakeFiles/build.dir/Source/BatchQuery.cpp.o" \
+"CMakeFiles/build.dir/Source/Update.cpp.o"
 
 # External object files for target build
 build_EXTERNAL_OBJECTS =
@@ -203,9 +263,13 @@ build: CMakeFiles/build.dir/Source/KeyServer.cpp.o
 build: CMakeFiles/build.dir/Source/CloudServer.cpp.o
 build: CMakeFiles/build.dir/Source/Give.cpp.o
 build: CMakeFiles/build.dir/Source/Take.cpp.o
+build: CMakeFiles/build.dir/Source/Upload.cpp.o
+build: CMakeFiles/build.dir/Source/SingleQuery.cpp.o
+build: CMakeFiles/build.dir/Source/BatchQuery.cpp.o
+build: CMakeFiles/build.dir/Source/Update.cpp.o
 build: CMakeFiles/build.dir/build.make
 build: CMakeFiles/build.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommylz/文档/C++/PBCS/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable build"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/build.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

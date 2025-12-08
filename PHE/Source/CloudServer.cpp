@@ -296,3 +296,61 @@ void CloudServer::dataDecryption (element_t& mk, CryptoPP::byte *iv) {
 
     aes_EAX_FileDec(infilename, aes_key, iv, outfilename);
 }
+
+void CloudServer::fileEncryption(element_t &mk,
+                                 CryptoPP::byte *iv,
+                                 string infilename,
+                                 string outfilename,
+                                 string ivpath)
+{
+    // ---------- 1) 生成 16 字节 AES key ----------
+    std::string mk_str = elementToString(mk);
+
+    CryptoPP::byte aes_key[16];
+    if (mk_str.size() >= 16)
+        memcpy(aes_key, mk_str.data(), 16);
+    else {
+        std::cerr << "Error: master key too short (" << mk_str.size() << " bytes)\n";
+        return;
+    }
+
+    // ---------- 2) 将 IV 保存到文件 (你要求的位置) ----------
+    {
+        std::ofstream ivFile(ivpath, std::ios::binary);
+        if (!ivFile.is_open()) {
+            std::cerr << "Error: cannot open IV file for writing: " << ivpath << std::endl;
+            return;
+        }
+
+        ivFile.write(reinterpret_cast<const char*>(iv), 16); // 固定 16 字节 IV
+        ivFile.close();
+    }
+
+    // ---------- 3) 测试输出文件能否打开 ----------
+    std::ofstream test(outfilename);
+    if (!test.is_open()) {
+        std::cerr << "Error: cannot open output file: " << outfilename << std::endl;
+        return;
+    }
+    test.close();
+
+    // ---------- 4) 调用加密函数 ----------
+    aes_EAX_FileEnc(infilename, aes_key, iv, outfilename);
+
+    std::cout << "IV saved to: " << ivpath << std::endl;
+}
+
+void CloudServer::fileDecryption (element_t& mk, CryptoPP::byte *iv, string infilename, string outfilename) {
+
+    string mk_str = elementToString(mk);
+
+    CryptoPP::byte aes_key[16];
+    if (mk_str.size() >= 16)
+        memcpy(aes_key, mk_str.data(), 16);
+    else {
+        std::cerr << "Error: master key too short (" << mk_str.size() << " bytes)\n";
+        return;
+    }
+
+    aes_EAX_FileDec(infilename, aes_key, iv, outfilename);
+}

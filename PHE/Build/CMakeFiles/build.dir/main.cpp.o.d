@@ -261,4 +261,8 @@ CMakeFiles/build.dir/main.cpp.o: /home/tommylz/文档/C++/PHE/main.cpp \
  /home/tommylz/文档/C++/PHE/Header/KeyServer.h \
  /home/tommylz/文档/C++/PHE/Header/CloudServer.h \
  /home/tommylz/文档/C++/PHE/Header/Encryption.h \
- /home/tommylz/文档/C++/PHE/Header/Decryption.h
+ /home/tommylz/文档/C++/PHE/Header/Decryption.h \
+ /home/tommylz/文档/C++/PHE/Header/Upload.h \
+ /home/tommylz/文档/C++/PHE/Header/SingleQuery.h \
+ /home/tommylz/文档/C++/PHE/Header/BatchQuery.h \
+ /home/tommylz/文档/C++/PHE/Header/Update.h

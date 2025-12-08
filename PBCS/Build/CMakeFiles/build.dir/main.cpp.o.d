@@ -261,4 +261,8 @@ CMakeFiles/build.dir/main.cpp.o: /home/tommylz/文档/C++/PBCS/main.cpp \
  /usr/local/include/cryptopp/base64.h /usr/local/include/cryptopp/ccm.h \
  /usr/local/include/cryptopp/authenc.h \
  /usr/local/include/cryptopp/modes.h \
- /usr/local/include/cryptopp/strciphr.h
+ /usr/local/include/cryptopp/strciphr.h \
+ /home/tommylz/文档/C++/PBCS/Header/Upload.h \
+ /home/tommylz/文档/C++/PBCS/Header/SingleQuery.h \
+ /home/tommylz/文档/C++/PBCS/Header/BatchQuery.h \
+ /home/tommylz/文档/C++/PBCS/Header/Update.h

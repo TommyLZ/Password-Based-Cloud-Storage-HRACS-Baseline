@@ -1,7 +1,7 @@
 CMakeFiles/build.dir/Source/KeyServer.cpp.o: \
- /home/tommylz/文档/C++/Myscheme/Source/KeyServer.cpp \
+ /home/tommylz/文档/C++/IPBCS/Source/KeyServer.cpp \
  /usr/include/stdc-predef.h \
- /home/tommylz/文档/C++/Myscheme/Header/KeyServer.h \
+ /home/tommylz/文档/C++/IPBCS/Header/KeyServer.h \
  /usr/local/include/cryptopp/config.h \
  /usr/local/include/cryptopp/config_align.h \
  /usr/local/include/cryptopp/config_asm.h \
@@ -163,7 +163,7 @@ CMakeFiles/build.dir/Source/KeyServer.cpp.o: \
  /usr/local/include/pbc/pbc_g_param.h \
  /usr/local/include/pbc/pbc_i_param.h /usr/local/include/pbc/pbc_random.h \
  /usr/local/include/pbc/pbc_memory.h \
- /home/tommylz/文档/C++/Myscheme/Header/PublicParam.h \
+ /home/tommylz/文档/C++/IPBCS/Header/PublicParam.h \
  /usr/local/include/cryptopp/integer.h \
  /usr/local/include/cryptopp/cryptlib.h \
  /usr/local/include/cryptopp/config.h \

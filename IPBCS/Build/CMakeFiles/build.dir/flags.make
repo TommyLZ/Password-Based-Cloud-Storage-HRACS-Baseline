@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tommylz/文档/C++/Myscheme/Header
+CXX_INCLUDES = -I/home/tommylz/文档/C++/IPBCS/Header
 
 CXX_FLAGS = -g
 

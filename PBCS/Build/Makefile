@@ -129,6 +129,30 @@ build/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/build
 .PHONY : build/fast
 
+Source/BatchQuery.o: Source/BatchQuery.cpp.o
+.PHONY : Source/BatchQuery.o
+
+# target to build an object file
+Source/BatchQuery.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/BatchQuery.cpp.o
+.PHONY : Source/BatchQuery.cpp.o
+
+Source/BatchQuery.i: Source/BatchQuery.cpp.i
+.PHONY : Source/BatchQuery.i
+
+# target to preprocess a source file
+Source/BatchQuery.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/BatchQuery.cpp.i
+.PHONY : Source/BatchQuery.cpp.i
+
+Source/BatchQuery.s: Source/BatchQuery.cpp.s
+.PHONY : Source/BatchQuery.s
+
+# target to generate assembly for a file
+Source/BatchQuery.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/BatchQuery.cpp.s
+.PHONY : Source/BatchQuery.cpp.s
+
 Source/Client.o: Source/Client.cpp.o
 .PHONY : Source/Client.o
 
@@ -273,6 +297,30 @@ Source/Registration.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Registration.cpp.s
 .PHONY : Source/Registration.cpp.s
 
+Source/SingleQuery.o: Source/SingleQuery.cpp.o
+.PHONY : Source/SingleQuery.o
+
+# target to build an object file
+Source/SingleQuery.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/SingleQuery.cpp.o
+.PHONY : Source/SingleQuery.cpp.o
+
+Source/SingleQuery.i: Source/SingleQuery.cpp.i
+.PHONY : Source/SingleQuery.i
+
+# target to preprocess a source file
+Source/SingleQuery.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/SingleQuery.cpp.i
+.PHONY : Source/SingleQuery.cpp.i
+
+Source/SingleQuery.s: Source/SingleQuery.cpp.s
+.PHONY : Source/SingleQuery.s
+
+# target to generate assembly for a file
+Source/SingleQuery.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/SingleQuery.cpp.s
+.PHONY : Source/SingleQuery.cpp.s
+
 Source/Take.o: Source/Take.cpp.o
 .PHONY : Source/Take.o
 
@@ -296,6 +344,54 @@ Source/Take.s: Source/Take.cpp.s
 Source/Take.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Take.cpp.s
 .PHONY : Source/Take.cpp.s
+
+Source/Update.o: Source/Update.cpp.o
+.PHONY : Source/Update.o
+
+# target to build an object file
+Source/Update.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Update.cpp.o
+.PHONY : Source/Update.cpp.o
+
+Source/Update.i: Source/Update.cpp.i
+.PHONY : Source/Update.i
+
+# target to preprocess a source file
+Source/Update.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Update.cpp.i
+.PHONY : Source/Update.cpp.i
+
+Source/Update.s: Source/Update.cpp.s
+.PHONY : Source/Update.s
+
+# target to generate assembly for a file
+Source/Update.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Update.cpp.s
+.PHONY : Source/Update.cpp.s
+
+Source/Upload.o: Source/Upload.cpp.o
+.PHONY : Source/Upload.o
+
+# target to build an object file
+Source/Upload.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Upload.cpp.o
+.PHONY : Source/Upload.cpp.o
+
+Source/Upload.i: Source/Upload.cpp.i
+.PHONY : Source/Upload.i
+
+# target to preprocess a source file
+Source/Upload.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Upload.cpp.i
+.PHONY : Source/Upload.cpp.i
+
+Source/Upload.s: Source/Upload.cpp.s
+.PHONY : Source/Upload.s
+
+# target to generate assembly for a file
+Source/Upload.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/Source/Upload.cpp.s
+.PHONY : Source/Upload.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -330,6 +426,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... build"
+	@echo "... Source/BatchQuery.o"
+	@echo "... Source/BatchQuery.i"
+	@echo "... Source/BatchQuery.s"
 	@echo "... Source/Client.o"
 	@echo "... Source/Client.i"
 	@echo "... Source/Client.s"
@@ -348,9 +447,18 @@ help:
 	@echo "... Source/Registration.o"
 	@echo "... Source/Registration.i"
 	@echo "... Source/Registration.s"
+	@echo "... Source/SingleQuery.o"
+	@echo "... Source/SingleQuery.i"
+	@echo "... Source/SingleQuery.s"
 	@echo "... Source/Take.o"
 	@echo "... Source/Take.i"
 	@echo "... Source/Take.s"
+	@echo "... Source/Update.o"
+	@echo "... Source/Update.i"
+	@echo "... Source/Update.s"
+	@echo "... Source/Upload.o"
+	@echo "... Source/Upload.i"
+	@echo "... Source/Upload.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

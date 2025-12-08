@@ -1,7 +1,7 @@
 CMakeFiles/build.dir/Source/Client.cpp.o: \
- /home/tommylz/文档/C++/Myscheme/Source/Client.cpp \
+ /home/tommylz/文档/C++/IPBCS/Source/Client.cpp \
  /usr/include/stdc-predef.h \
- /home/tommylz/文档/C++/Myscheme/Header/Client.h \
+ /home/tommylz/文档/C++/IPBCS/Header/Client.h \
  /usr/local/include/pbc/pbc.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -160,7 +160,7 @@ CMakeFiles/build.dir/Source/Client.cpp.o: \
  /usr/local/include/cryptopp/config_int.h \
  /usr/local/include/cryptopp/config_ns.h \
  /usr/local/include/cryptopp/config_misc.h \
- /home/tommylz/文档/C++/Myscheme/Header/PublicParam.h \
+ /home/tommylz/文档/C++/IPBCS/Header/PublicParam.h \
  /usr/local/include/cryptopp/integer.h \
  /usr/local/include/cryptopp/cryptlib.h \
  /usr/local/include/cryptopp/config.h \

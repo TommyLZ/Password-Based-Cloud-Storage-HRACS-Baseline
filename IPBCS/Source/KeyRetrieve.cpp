@@ -8,11 +8,15 @@
 #include <chrono>
 #include <cryptopp/osrng.h>
 #include <pbc/pbc.h>
+#include <filesystem>
+#include <fstream>
 
 extern pairing_t pairing;
 
 using namespace std;
 using namespace CryptoPP;
+
+namespace fs = std::filesystem;
 
 void KeyRetrieve(char *psw_u, char *ID_u)
 {
@@ -47,7 +51,7 @@ void KeyRetrieve(char *psw_u, char *ID_u)
 	string s_u;
 	string gamma_u;
 	cloudserver.authenInRetrieve_CS(s_u, gamma_u, client.getID(), EM_CS, iv_CS);
-    cout << "You have successfully logged in the cloud server!" << endl;
+	cout << "You have successfully logged in the cloud server!" << endl;
 
 	// Log in to the cloud server
 	string EM_KS;
@@ -61,19 +65,10 @@ void KeyRetrieve(char *psw_u, char *ID_u)
 	string ctx_dsk;
 	string rho_u;
 	keyserver.authenInRetrieve_KS(ctx_dsk, rho_u, EM_KS, iv_KS);
-    cout << "You have successfully logged in the key server!" << endl;
+	cout << "You have successfully logged in the key server!" << endl;
 
 	// Client Retrieval the key
 	string sk;
 	client.retrieval(sk, gamma_u, psw_u_hat, ctx_dsk, rho_u);
 	cout << "The key retrieval is finished!" << endl;
-
-	// CryptoPP::byte iv[16 * 16];
-	// AutoSeededRandomPool prng;
-	// prng.GenerateBlock(iv, 16 * 16);
-	
-	// client.dataEncryption(sk, iv);
-	// cout << "The applicaiton data is encrypted and outsourced successfully!" << endl;
-	// client.dataDecryption(sk, iv);
-	// cout << "The applicaiton data is recovered successfully!" << endl;
 }

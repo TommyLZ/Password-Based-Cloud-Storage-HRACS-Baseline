@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/tommylz/文档/C++/PHE/Source/BatchQuery.cpp" "CMakeFiles/build.dir/Source/BatchQuery.cpp.o" "gcc" "CMakeFiles/build.dir/Source/BatchQuery.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/Source/Client.cpp" "CMakeFiles/build.dir/Source/Client.cpp.o" "gcc" "CMakeFiles/build.dir/Source/Client.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/Source/CloudServer.cpp" "CMakeFiles/build.dir/Source/CloudServer.cpp.o" "gcc" "CMakeFiles/build.dir/Source/CloudServer.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/Source/Decryption.cpp" "CMakeFiles/build.dir/Source/Decryption.cpp.o" "gcc" "CMakeFiles/build.dir/Source/Decryption.cpp.o.d"
@@ -15,6 +16,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/tommylz/文档/C++/PHE/Source/KeyServer.cpp" "CMakeFiles/build.dir/Source/KeyServer.cpp.o" "gcc" "CMakeFiles/build.dir/Source/KeyServer.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/Source/PublicParam.cpp" "CMakeFiles/build.dir/Source/PublicParam.cpp.o" "gcc" "CMakeFiles/build.dir/Source/PublicParam.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/Source/Registration.cpp" "CMakeFiles/build.dir/Source/Registration.cpp.o" "gcc" "CMakeFiles/build.dir/Source/Registration.cpp.o.d"
+  "/home/tommylz/文档/C++/PHE/Source/SingleQuery.cpp" "CMakeFiles/build.dir/Source/SingleQuery.cpp.o" "gcc" "CMakeFiles/build.dir/Source/SingleQuery.cpp.o.d"
+  "/home/tommylz/文档/C++/PHE/Source/Update.cpp" "CMakeFiles/build.dir/Source/Update.cpp.o" "gcc" "CMakeFiles/build.dir/Source/Update.cpp.o.d"
+  "/home/tommylz/文档/C++/PHE/Source/Upload.cpp" "CMakeFiles/build.dir/Source/Upload.cpp.o" "gcc" "CMakeFiles/build.dir/Source/Upload.cpp.o.d"
   "/home/tommylz/文档/C++/PHE/main.cpp" "CMakeFiles/build.dir/main.cpp.o" "gcc" "CMakeFiles/build.dir/main.cpp.o.d"
   )
 

@@ -55,3 +55,6 @@ void aes_EAX_FileEnc(const string &infilename, const CryptoPP::byte *key, const 
 // AES_EAX authentication decryption operation
 void aes_EAX_FileDec(const string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const string &outfilename);
 
+bool encryptFileToSingleBlob(const std::string& mk,
+                             const std::string& inputPath,
+                             const std::string& cipherPath);

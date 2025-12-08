@@ -2,12 +2,17 @@
 #include "Client.h"
 #include "KeyServer.h"
 #include "CloudServer.h"
+#include "PublicParam.h"
 
 #include <iostream>
+#include <fstream>
 #include <cryptopp/osrng.h>
+#include <filesystem>
 using namespace std;
 
 extern pairing_t pairing;
+
+namespace fs = std::filesystem;
 
 void Take(string& psw, string& id)
 {
@@ -55,13 +60,4 @@ void Take(string& psw, string& id)
 	string mk;
 	client.recover(mk, k_1, k_2, ct, tag);
 	cout << "The key recovery is finished!" << endl;
-
-	// CryptoPP::byte iv[16 * 16];
-	// AutoSeededRandomPool prng;
-	// prng.GenerateBlock(iv, 16 * 16);
-	
-	// client.dataEncryption(mk, iv);
-	// cout << "The applicaiton data is encrypted and outsourced successfully!" << endl;
-	// client.dataDecryption(mk, iv);
-	// cout << "The applicaiton data is recovered successfully!" << endl;
 }

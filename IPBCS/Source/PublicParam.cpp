@@ -20,35 +20,50 @@
 #include <cryptopp/files.h>
 #include <cryptopp/eax.h>
 #include <pbc/pbc.h>
+#include <cryptopp/aes.h>
+#include <cryptopp/gcm.h>
+#include <filesystem>
 
 using namespace std;
 using namespace CryptoPP;
+namespace fs = std::filesystem;
+
 
 pairing_t pairing;
 element_t g, h;
 
-// System Initialization
 void sysInitial()
 {
-    cout << "*********************************System Initialization********************************" << endl;
-    // Set pbc param
-    char param[1024];
-    size_t count = fread(param, 1, 1024, stdin);
-    if (!count)
-        pbc_die("input error");
+    cout << "********************************* System Initialization ********************************" << endl;
 
-    // Initialize pairing
+    // ------------------- Step 1: Load pairing parameters from file -------------------
+    const std::string param_file = "../Param/a.param";
+    FILE* fp = fopen(param_file.c_str(), "r");
+    if (!fp) {
+        pbc_die("Failed to open parameter file: %s", param_file.c_str());
+    }
+
+    char param[1024];  // buffer for pairing parameters
+    size_t count = fread(param, 1, sizeof(param), fp);
+    fclose(fp);
+
+    if (count == 0) {
+        pbc_die("Failed to read pairing parameters");
+    }
+
+    // ------------------- Step 2: Initialize pairing -------------------
     pairing_init_set_buf(pairing, param, count);
 
-    // Declare and initialize variables
+    // ------------------- Step 3: Declare and initialize group elements -------------------
     element_init_G1(h, pairing);
     element_init_G2(g, pairing);
-    
-    // Generate the variables
+
+    // ------------------- Step 4: Generate random elements -------------------
     element_random(g);
 
     cout << "System initialization finished!" << endl;
 }
+
 
 // Converts a byte array to a hexadecimal string
 string hex_encode(const unsigned char *buffer, int length)
@@ -271,116 +286,78 @@ void authentication(string &ID_u_str, string &cred, string &EM, CryptoPP::byte *
     }
 }
 
-void aes_EAX_FileEnc(const string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const string &outfilename)
+void aes_EAX_FileEnc(const std::string &infilename,
+                     const CryptoPP::byte *key,
+                     const CryptoPP::byte *iv,
+                     const std::string &outfilename)
 {
-    ifstream input(infilename);
-    if (!input.is_open())
-    {
-        cout << "Error opening file for reading." << endl;
-    }
-
-    ofstream output(outfilename, ios::binary);
-    if (!output)
-    {
-        cout << "Error opening file for writing." << endl;
-    }
-
-    EAX<AES>::Encryption enc;
-    enc.SetKeyWithIV(key, 16, iv, 16 * 16);
-
-    const size_t bufferSize = 8192;
-
-    CryptoPP::byte buffer[bufferSize];
-
-    while (input.good())
-    {
-        input.read(reinterpret_cast<char*>(buffer), bufferSize);
-        size_t bytesRead = input.gcount();
-
-        AuthenticatedEncryptionFilter ef(enc,
-            new FileSink(output));
-
-        ef.Put(buffer, bytesRead);
-        ef.MessageEnd();
-
-        output.flush();
-    }
-
-    // string encoded;
-    // // Pretty print iv
-    // encoded.clear();
-    // StringSource(iv, 16*16, true,
-    //              new HexEncoder(
-    //                  new StringSink(encoded)) // HexEncoder
-    // );                                        // StringSource
-    // cout << "iv: " << encoded << endl;
-
-    // // Pretty print key
-    // encoded.clear();
-    // StringSource(key, 16, true,
-    //              new HexEncoder(
-    //                  new StringSink(encoded)) // HexEncoder
-    // );                                        // StringSource
-    // cout << "key: " << encoded << endl;
-
-    input.close();
-    output.close();
-}
-
-void aes_EAX_FileDec(const string &infilename, const CryptoPP::byte *key, const CryptoPP::byte *iv, const string &outfilename)
-{
-    ifstream input(infilename, ios::binary);
-    if (!input.is_open())
-    {
-        cout << "Error opening file for reading." << endl;
+    std::ifstream input(infilename, std::ios::binary);
+    if (!input.is_open()) {
+        std::cerr << "Error opening file for reading: " << infilename << std::endl;
         return;
     }
 
-    ofstream output(outfilename);
-    if (!output.is_open())
-    {
-        cout << "Error opening file for writing." << endl;
-        return ;
-    }
+    // --- Use FileSink directly with filename ---
+    EAX<AES>::Encryption enc;
+    enc.SetKeyWithIV(key, 16, iv, 16);  // 16-byte IV
 
-    // string encoded;
-    // // Pretty print iv
-    // encoded.clear();
-    // StringSource(iv, 16*16, true,
-    //              new HexEncoder(
-    //                  new StringSink(encoded)) // HexEncoder
-    // );                                        // StringSource
-    // cout << "iv: " << encoded << endl;
-
-    // // Pretty print key
-    // encoded.clear();
-    // StringSource(key, 16, true,
-    //              new HexEncoder(
-    //                  new StringSink(encoded)) // HexEncoder
-    // );                                        // StringSource
-    // cout << "key: " << encoded << endl;
-
-    EAX<AES>::Decryption dec;
-    dec.SetKeyWithIV(key, 16, iv, 16 * 16);
+    AuthenticatedEncryptionFilter ef(enc, new FileSink(outfilename.c_str()));
 
     const size_t bufferSize = 8192;
-
     CryptoPP::byte buffer[bufferSize];
 
-    while (input.good())
-    {
+    while (input) {
         input.read(reinterpret_cast<char*>(buffer), bufferSize);
-        size_t bytesRead = input.gcount();
-
-        AuthenticatedDecryptionFilter df(dec,
-            new FileSink(output));
-
-        df.Put(buffer, bytesRead);
-        df.MessageEnd();
-
-        output.flush();
+        std::streamsize bytesRead = input.gcount();
+        if (bytesRead > 0)
+            ef.Put(buffer, static_cast<size_t>(bytesRead));
     }
 
+    ef.MessageEnd(); // finalize and write tag
     input.close();
-    output.close();
+
+    std::cout << "Encrypted: " << infilename << " -> " << outfilename << std::endl;
+}
+
+
+// AES-EAX file decryption function
+void aes_EAX_FileDec(const std::string &infilename,
+                     const CryptoPP::byte *key,
+                     const CryptoPP::byte *iv,
+                     const std::string &outfilename)
+{
+    // Open input file
+    ifstream input(infilename, ios::binary);
+    if (!input.is_open()) {
+        cerr << "Error opening file for reading: " << infilename << endl;
+        return;
+    }
+
+    // Initialize AES/EAX decryption object
+    EAX<AES>::Decryption dec;
+    dec.SetKeyWithIV(key, 16, iv, 16);  // 16-byte IV
+
+    // Create an authenticated decryption filter and attach FileSink
+    AuthenticatedDecryptionFilter df(dec, new FileSink(outfilename.c_str()));
+
+    const size_t bufferSize = 8192;    // Read buffer size
+    CryptoPP::byte buffer[bufferSize];
+
+    // Read ciphertext in chunks and feed into decryption filter
+    while (input) {
+        input.read(reinterpret_cast<char*>(buffer), bufferSize);
+        std::streamsize bytesRead = input.gcount();
+        if (bytesRead > 0)
+            df.Put(buffer, static_cast<size_t>(bytesRead));
+    }
+
+    // Finalize decryption and verify authentication tag
+    df.MessageEnd();
+    input.close();
+
+    // Check authentication result
+    if (!df.GetLastResult()) {
+        cerr << "Authentication failed for file: " << infilename << endl;
+        return;
+    }
 }
